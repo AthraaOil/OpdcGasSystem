@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+
+</head>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+<script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+
+<body class='snippet-body'>
+    <div class="container register">
+        <div class="row">
+            <!-- side bar -->
+            <div class="col-md-3 register-left">
+                <img src="logo.png" alt="" />
+                <h3>أهلا بك</h3>
+                <p>يرجى ملئ الاستمارة  </p>
+                <input type="submit" name="" value="تسجيل دخول" /><br />
+            </div>
+            <!-- whole form  -->
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">المواطن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">الموظف</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <!-- here is the first form -->
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">استمارة المواطن</h3>
+                        <!-- <div class="row register-form"> -->
+                        <form class="row register-form">
+                            <!-- here is the column one on the lift -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="اسم المالك *" value="" name="owner-name"/>
+                                    @error('owner-name')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="المحافظة *" value="" name="government_name"/>
+                                    @error('government_name')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="رقم السيارة *" value="" name="car_number"/>
+                                    @error('car_number')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="الحرف التابع لرقم السيارة *" value="" name="car_letter"/>
+                                    @error('car_letter')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="رقم السنوية *" value="" name="document_number"/>
+                                    @error('car_letter')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="صورة الهوية او البطاقة الموحدة *" value="" name="id_card_photo"/>
+                                    @error('id_card_photo')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="صورة المركبة *" value="" name="car_photo"/>
+                                    @error('car_photo')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="صورة بطاقة السكن *" value="" name="resident_card_photo"/>
+                                    @error('resident_card_photo')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <div class="maxl">
+                                        <label class="radio inline">
+                                            <input type="radio" name="gender" value="male" checked>
+                                            <span> ذكر </span>
+                                        </label>
+                                        <label class="radio inline">
+                                            <input type="radio" name="gender" value="female">
+                                            <span>انثى </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- here is the second colunm on the right -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="رقم البطاقةالتموينية *" value="" name="family_number"/>
+                                    @error('family_number')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" minlength="10" maxlength="10" name="mobile" class="form-control" placeholder="رقم الهاتف *" value="" />
+                                    @error('mobile')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option class="hidden" selected disabled>أختر نوع المركبة</option>
+                                        <option>خصوصي 1</option>
+                                        <option>أجرة 2</option>
+                                        <option>حمل 3</option>
+                                        <option>حكومي 4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="نوع السيارة *" value="" name="car_type"/>
+                                    @error('car_type')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="رقم الهوية او الموحدة *" value="" name="id_card_number"/>
+                                    @error('id_card_number')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="رقم بطاقة السكن *" value="" name="resident_number"/>
+                                    @error('resident_number')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="صورة وجه السنوية *" value="" name="document_front_photo"/>
+                                    @error('document_front_photo')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="صورة ظهر السنوية *" value="" name="document_back_photo"/>
+                                    @error('document_back_photo')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                           
+                                <input type="submit" class="btnRegister4" value="تسجيل" />
+                                <input type="submit" class="btnRegister4" value="عرض" />
+                                <!-- <input type="submit" class="btnRegister4" value="تعديل" /> -->
+                            </div>
+                            </form>
+                            
+                        <!-- </div> -->
+                    </div>
+                    <!-- ///////////////////end of the first form ////////////////////////////////////////////////////////////////////////////-->
+
+                    <!-- the seconf form of the employee -->
+                    <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3 class="register-heading">أدارة الموقع</h3>
+                        <!-- <div class="row register-form"> -->
+                        <!-- <form class="row register-form"> -->
+                            <div class="col-md-6" id="table">
+                                <!-- here we will start the super admin page -->
+                             <a href="#table1"> <input type="submit" class="btnRegister2" value="users" /></a>  
+                                <input type="submit" class="btnRegister2" value="Report" />
+                           
+                                <!-- <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                </div> -->
+                            </div>
+                            <div class="col-md-5" id="col2">
+                                <input type="submit" class="btnRegister" value="export file" />
+                                <input type="submit" class="btnRegister" value="add user" />
+                                
+                                <!-- <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option class="hidden" selected disabled>Please select your Sequrity Question</option>
+                                        <option>What is your Birthdate?</option>
+                                        <option>What is Your old Phone Number</option>
+                                        <option>What is your Pet Name?</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="`Answer *" value="" />
+                                </div> -->
+                                
+                            </div>
+                            <!-- </form> -->
+                        <!-- </div> -->
+                        <div class="container">
+                            <div class="row2">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col col-sm-3 col-xs-12">
+                                                    <h4 class="title">Data <span>List</span></h4>
+                                                </div>
+                                                <div class="col-sm-9 col-xs-12 text-right">
+                                                    <div class="btn_group">
+                                                        <input type="text" class="form-control" placeholder="Search">
+                                                        <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                                        <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                                        <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Full Name</th>
+                                                        <th>Age</th>
+                                                        <th>Job Title</th>
+                                                        <th>City</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <ul class="action-list">
+                                                                <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                                                <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- <tr>
+                                                        <td>2</td>
+                                                        <td>Taylor Reyes</td>
+                                                        <td>22</td>
+                                                        <td>UI/UX Developer</td>
+                                                        <td>Baileux</td>
+                                                        <td>
+                                                            <ul class="action-list">
+                                                                <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                                                <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Justin Block</td>
+                                                        <td>26</td>
+                                                        <td>Frontend Developer</td>
+                                                        <td>Overland Park</td>
+                                                        <td>
+                                                            <ul class="action-list">
+                                                                <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                                                <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Sean Guzman</td>
+                                                        <td>26</td>
+                                                        <td>Web Designer</td>
+                                                        <td>Gloucester</td>
+                                                        <td>
+                                                            <ul class="action-list">
+                                                                <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                                                <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Keith Carter</td>
+                                                        <td>20</td>
+                                                        <td>Graphic Designer</td>
+                                                        <td>Oud-Turnhout</td>
+                                                        <td>
+                                                            <ul class="action-list">
+                                                                <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                                                <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr> -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+                                                <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                                                <div class="col-sm-6 col-xs-6">
+                                                    <ul class="pagination hidden-xs pull-right">
+                                                        <li><a href="#"></a></li>
+                                                        <li class="active"><a href="#">1</a></li>
+                                                        <li><a href="#">2</a></li>
+                                                        <li><a href="#">3</a></li>
+                                                        <li><a href="#">4</a></li>
+                                                        <li><a href="#">5</a></li>
+                                                        <li><a href="#">></a></li>
+                                                    </ul>
+                                                    <ul class="pagination visible-xs pull-right">
+                                                        <li><a href="#"></a></li>
+                                                        <li><a href="#">></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end of table -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>

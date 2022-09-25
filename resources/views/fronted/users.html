@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+
+</head>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+<script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+<body class='snippet-body'>
+    <div class="container register">
+        <div class="row">
+            <!-- side bar -->
+            <div class="col-md-3 register-left">
+                <img src="logo.png" alt="" />
+                <h3>أهلا بك</h3>
+                <p>يرجى ملئ الاستمارة  </p>
+                <input type="submit" name="" value="تسجيل دخول" /><br />
+            </div>
+            <!-- whole form  -->
+            <div class="col-md-9 register-right">
+                <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">المواطن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">الموظف</a>
+                    </li>
+                </ul> -->
+                <div class="tab-content" id="myTabContent">
+                    <!-- here is the first form -->
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">لوحة أضافة موظف</h3>
+                        <!-- <div class="row register-form"> -->
+                        <form class="row register-form">
+                            <!-- here is the column one on the lift -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder=" اسم الموظف الثلاثي *" value="" name="owner-name"/>
+                                    @error('owner-name')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="اسم المستخدم *" value="" name="government_name"/>
+                                    @error('government_name')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="رمز الدخول *" value="" name="government_name"/>
+                                    @error('government_name')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" id="role1" name="role1" value="مدقق">
+                                    <label for="role1">مدقق</label>
+                                    <input type="checkbox" id="role2" name="role2" value="مساعد">
+                                    <label for="role2">مساعد مدقق</label>
+                                    @error('government_name')
+                                    <div class="form-error">
+                                        {{$message}}
+                                    </div>
+                    
+                                    @enderror
+                                </div>
+                                <!-- <form action="">
+                                    <input type="checkbox" id="role1" name="vehicle1" value="Bike">
+                                    <label for="role1">مدقق</label>
+                                    <input type="checkbox" id="role2" name="vehicle2" value="Car">
+                                    <label for="role2">مساعد مدقق</label>
+                                  </form>  -->
+                                <input type="submit" class="btnRegister" value="أضافة موظف" />
+                            </div>
+                         
+                            </form>
+                            
+                        <!-- </div> -->
+                    </div>
+</div>
+</div>
+
+</div>
+    
+
+
+
+
+
+</body>
+</html>

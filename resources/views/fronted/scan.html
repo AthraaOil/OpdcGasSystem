@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   
+   
+</head>
+<body>
+    <div class="scan_title">
+        <h1>رمز الماسح الضوئي</h1> 
+        <strong>اخر رمز للماسح الضوئي </strong>
+    </div>
+   
+    <button class="scan" id="scan">الماسح </button>
+   <div id="last-barcode"></div>
+   
+   <script>
+    var barcode='';
+    var interval;
+    var m=document.querySelector("#scan")
+    m.addEventListener("click", vv)
+function vv() {
+    document.body.style.backgroundColor="blue"
+    document.addEventListener('keydown', function(evt){
+            if (interval)
+            clearInterval(interval);
+            if (evt.code == 'Enter'){
+            if (barcode)
+            handleBarcode(barcode);
+            barcode='';
+            return;
+        }
+        if (evt.key != 'Shift')
+        barcode += evt.key;
+        interval = setInterval( ()=> barcode='', 20);
+     } );
+     function handleBarcode(scanned_barcode){
+         document.querySelector('#last-barcode').innerHTML = scanned_barcode;
+     }
+}
+    
+ 
+</script>
+</body>
+
+</html>
